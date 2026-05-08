@@ -1,70 +1,107 @@
-# YouTube Video Downloader with yt-dlp
+<h1 align="center">🎬 YouTube Video Downloader</h1>
 
-این پروژه یک اسکریپت ساده برای دانلود ویدیوهای یوتیوب با بهترین کیفیت ویدیو و صوت است، که با استفاده از کتابخانه‌ی **yt-dlp** نوشته شده است.
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.7+-blue?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/yt--dlp-powered-red?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20Mac-lightgrey?style=for-the-badge" />
+  <img src="https://img.shields.io/github/stars/mhmdrzanouriyani/YOUTUBE-DOWNLOADER?style=for-the-badge" />
+</p>
 
----
-
-## ویژگی‌ها
-
-- دریافت لینک ویدیو از کاربر
-- دانلود بهترین کیفیت ویدیو و صدا به صورت جداگانه و ادغام شده
-- ذخیره فایل دانلود شده در مسیر دلخواه با نام و عنوان ویدیو
-
----
-
-## پیش‌نیازها
-
-- پایتون نسخه 3.6 به بالا
-- نصب کتابخانه‌ی yt-dlp
+<p align="center">
+  A clean, cross-platform YouTube video downloader built with Python and yt-dlp.<br>
+  Downloads videos in the best available quality and saves them to your Downloads folder automatically.
+</p>
 
 ---
 
-## نصب
+## ✨ Features
 
-برای نصب yt-dlp از دستور زیر استفاده کنید:
+- ✅ Downloads best quality video + audio merged
+- ✅ Works on **Windows, Linux, macOS**
+- ✅ No hardcoded paths — saves to `~/Downloads/YouTube/` automatically
+- ✅ Clean CLI interface
+- ✅ Lightweight — just one dependency
 
+---
+
+## 🚀 Quick Start
+
+### 1. Clone the repository
 ```bash
-pip install yt-dlp
+git clone https://github.com/mhmdrzanouriyani/YOUTUBE-DOWNLOADER.git
+cd YOUTUBE-DOWNLOADER
+```
+
+### 2. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Run it
+```bash
+python downloader.py
+```
+
+### 4. Paste your YouTube URL when prompted
+```
+==================================================
+  🎬 YouTube Downloader - by Mohix Code
+==================================================
+
+Enter YouTube URL: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+
+📥 Downloading to: /home/user/Downloads/YouTube
+✅ Download complete!
 ```
 
 ---
 
-## نحوه استفاده
+## 📁 Project Structure
 
-1. فایل `download_youtube.py` را با کد زیر ایجاد کنید:
+```
+YOUTUBE-DOWNLOADER/
+├── downloader.py       # Main script
+├── requirements.txt    # Dependencies
+├── .gitignore          # Git ignore rules
+└── README.md           # This file
+```
+
+---
+
+## ⚙️ Requirements
+
+- Python 3.7+
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp)
+
+---
+
+## 🛠️ Customization
+
+Want to change the download path? Edit this line in `downloader.py`:
 
 ```python
-from yt_dlp import YoutubeDL
-
-url = input("Enter Youtube link : ").strip()
-
-ydl_opts = {
-    'format' : 'bestvideo+bestaudio',
-    'outtmpl' : r'E:\New folder\%(title)s.%(ext)s'
-}
-
-with YoutubeDL(ydl_opts) as ydl:
-    ydl.download([url])
+path = os.path.join(os.path.expanduser("~"), "Downloads", "YouTube")
 ```
-
-2. در ترمینال به محل فایل بروید و دستور زیر را اجرا کنید:
-
-```bash
-python download_youtube.py
-```
-
-3. لینک ویدیوی یوتیوب را وارد کنید و صبر کنید تا دانلود کامل شود.
 
 ---
 
-## نکات مهم
+## 📌 Roadmap
 
-- مسیر ذخیره فایل‌ها در قسمت `'outtmpl'` قابل تغییر است.  
-- مطمئن شوید پوشه مقصد وجود دارد تا فایل‌ها به درستی ذخیره شوند.
+- [ ] Add MP3/audio-only download option
+- [ ] Add playlist support
+- [ ] Add progress bar
+- [ ] Build a simple web UI with Flask
 
 ---
-موفق باشید
 
-MOHAMMADREZA NOURIYANI 
-https://www.instagram.com/MOHIX_CODE/
-https://www.youtube.com/@Mohixcode
+## 👨‍💻 Author
+
+**Mohammadreza Nouriyani**
+
+[![YouTube](https://img.shields.io/badge/YouTube-Mohix_Code-red?style=flat&logo=youtube)](https://www.youtube.com/@Mohixcode)
+[![Instagram](https://img.shields.io/badge/Instagram-mohix_code-purple?style=flat&logo=instagram)](https://www.instagram.com/mohix_code)
+[![GitHub](https://img.shields.io/badge/GitHub-mhmdrzanouriyani-black?style=flat&logo=github)](https://github.com/mhmdrzanouriyani)
+
+---
+
+⭐ If this helped you, please give it a star! It keeps me motivated.
